@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import notesRoutes from './routes/notesRoutes.js';
 import session from 'express-session';
-import { auth } from './middlewares/auth.js';
+
 
 const app = express();
 
@@ -23,7 +23,6 @@ app.use(session({
     
 }));
 
-auth(app);
 
 app.use(express.json());
 app.use(bodyParser.json());

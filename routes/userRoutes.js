@@ -1,13 +1,12 @@
-import express from 'express';
-import registerUser from '../controllers/registerUser.js';
-import passport from 'passport';
+import express from "express";
+import { signup, login } from "../controllers/registerUser.js";
 
 const router = express.Router();
 
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/notes', 
-    failureRedirect: '/login',  
-    failureFlash: true 
-}));
+// Signup Route
+router.post("/signup", signup);
+
+// Login Route
+router.post("/login", login);
 
 export default router;
